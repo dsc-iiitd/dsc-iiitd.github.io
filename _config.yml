@@ -18,7 +18,7 @@ email: dsciiitdelhi@gmail.com
 description: >-
   DSC-IIIT Delhi
 baseurl: ""
-url: "http://localhost:4000"
+url: "https://dsc-iiitd.github.io/"
 twitter_username: dsciiitd
 github_username:  dsc-iiitd
 
