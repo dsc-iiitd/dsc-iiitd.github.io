@@ -3642,6 +3642,8 @@ body { font-family: 'Open Sans', sans-serif; }
 
 .navbar.not-scrolled { background: transparent !important; box-shadow: none !important; }
 
+.bg-trans-dark { background: rgba(32, 35, 37, 0.87) !important; }
+
 #brand-logo { transition: 200ms ease; }
 
 .large-logo { height: 40px; }
@@ -3659,6 +3661,14 @@ body { font-family: 'Open Sans', sans-serif; }
 .offset-negative { margin-top: -56px; }
 
 .offset-positive { margin-top: 56px; }
+
+.stats-bg { background: url(/assets/img/stats-bg.jpg); width: 100%; background-size: cover; background-position: center; background-repeat: no-repeat; }
+
+.stats-overlay { position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.5); }
+
+.text-info-custom { color: #63cdd7; }
+
+.member-image { max-width: 200px; max-height: 200px; }
 
 .social-media-links { margin: 0; }
 

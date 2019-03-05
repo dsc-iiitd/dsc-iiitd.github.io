@@ -22,6 +22,12 @@ url: "https://dsc-iiitd.github.io/"
 twitter_username: dsciiitd
 github_username:  dsc-iiitd
 google_analytics:  UA-135615494-1
+stat1:  12+
+stat2:  13+
+stat3:  45
+stat4:  6
+future: true
+
 # Build settings
 markdown: kramdown
 theme: minima
