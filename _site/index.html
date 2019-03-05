@@ -2,7 +2,8 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/assets/favicon.ico"><!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>DSC-IIIT Delhi | DSC-IIIT Delhi</title>
 <meta name="generator" content="Jekyll v3.7.4" />
 <meta property="og:title" content="DSC-IIIT Delhi" />
@@ -28,10 +29,12 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 </script>
   
 </head>
-<body><nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow  &nbsp; not-scrolled" id="navbar">
   
   <div class="container">  
-    <a class="site-title navbar-brand" rel="author" href="/">DSC-IIIT Delhi</a>
+    <a class="site-title navbar-brand" rel="author" href="/">
+      <img src="/assets/img/logo-color-white.png" class="large-logo" height="35" alt="DSC IIIT Delhi" id="brand-logo">
+    </a>
     
     <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -50,46 +53,19 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   </div>
 
 </nav>
-<main class="container" aria-label="Content" style="padding-top: 56px;">
-  
-      <div class="row">
-  
-  <div class="col">
-    Home Page
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+<div class="bg-cover">
+  <div class="cover-overlay d-flex justify-content-center align-items-center">
+    <blockquote class="blockquote text-center border-0">
+      <p class="mb-0 text-white" id="quote-content"></p>
+      <footer class="blockquote-footer text-white" id="quote-title"></footer>
+    </blockquote>
   </div>
-  
-  <!-- Lists all Blog Posts For Future Reference --></div>
+</div>
+<div class="container">
+  <div class="row">
+    <!-- Lists all Blog Posts For Future Reference --></div>
 
-     
-    </main><footer>
+</div><footer>
   <data class="u-url" href="/"></data>
   <div class="container">
     <div class="row">
@@ -101,11 +77,38 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
         
     </div>
   </div>
-  
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><script type="text/javascript">
+  
+  $(document).ready(function () {
+    
+    $(window).scroll(function(){
+      if($(this).scrollTop() > 50){
+        $('.navbar').removeClass('not-scrolled');
+        $('#brand-logo').removeClass('large-logo');
+      }
+      else{
+        $('.navbar').addClass('not-scrolled');
+        $('#brand-logo').addClass('large-logo');
+      }
+    });
+
+
+    $.ajax( {
+      
+      url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+      success: function(data) {
+        var post = data.shift(); // The data is an array of posts. Grab the first one.
+        $('#quote-title').text(post.title);
+        $('#quote-content').html(post.content);
+      },
+      cache: false
+    });
+
+  });
+  
+  </script></footer>
 </body>
 
 </html>
