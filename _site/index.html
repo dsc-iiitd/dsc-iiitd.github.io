@@ -36,18 +36,18 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
       <img src="/assets/img/logo-color-white.png" class="large-logo" height="35" alt="DSC IIIT Delhi" id="brand-logo">
     </a>
     
-    <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler float-right border-0 custom-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarToggler">
       
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0"><li class="nav-item">
-              <a class="nav-link" href="/#link1">Link1</a>
+              <a class="nav-link text-white" href="/#about">About us</a>
             </li><li class="nav-item">
-              <a class="nav-link" href="/#link2">Link2</a>
+              <a class="nav-link text-white" href="/#news">News</a>
             </li><li class="nav-item">
-              <a class="nav-link" href="/#link3">Link3</a>
+              <a class="nav-link text-white" href="/#link3">Link3</a>
             </li></ul>
     </div>
   </div>
@@ -55,17 +55,113 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 </nav>
 <div class="bg-cover">
   <div class="cover-overlay d-flex justify-content-center align-items-center">
-    <blockquote class="blockquote text-center border-0">
-      <p class="mb-0 text-white" id="quote-content"></p>
-      <footer class="blockquote-footer text-white" id="quote-title"></footer>
-    </blockquote>
+    <div class="text-center">
+      <p class="text-white display-4 mb-5">Lorem ipsum dolor sit amet, consectetur.</p>
+      <a class="btn btn-outline-light mx-3" href="#" role="button" style="min-width: 150px">Events</a>
+      <a class="btn btn-outline-light mx-3" href="#" role="button" style="min-width: 150px">Contact Us</a>
+    </div>
+      <a href="#about" style="position: absolute; bottom: 50px" class="bounceInDown animated delay-1s"><img src="/assets/img/angle-arrow.png" class="pulse animated fast infinite"></a>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <!-- Lists all Blog Posts For Future Reference --></div>
 
-</div><footer>
+<section class="container offset-negative" id="about">
+  <div class="row offset-positive">
+    <div class="col">
+      <h1 class="text-center my-5"> About us </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-4">
+      <div class="card  border-0">
+        <img class="card-img-top rounded" src="/assets/img/placeholder.svg" alt="">
+        <div class="card-body px-0 pt-3 pb-5">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="card  border-0">
+        <img class="card-img-top rounded" src="/assets/img/placeholder.svg" alt="">
+        <div class="card-body px-0 pt-3 pb-5">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="card  border-0">
+        <img class="card-img-top rounded" src="/assets/img/placeholder.svg" alt="">
+        <div class="card-body px-0 pt-3 pb-5">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid mt-5 stats-bg">
+  <div class="row justify-content-center">
+    <div class="col-6 col-lg-2 text-center">
+      askufhj
+    </div>
+    <div class="col-6 col-lg-2 text-center">
+      askufhj
+    </div>
+    <div class="col-6 col-lg-2 text-center">
+      askufhj
+    </div>
+    <div class="col-6 col-lg-2 text-center">
+      askufhj
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+
+  function home_callback() {
+
+    if($(this).scrollTop() > 50){
+      $('.navbar').removeClass('not-scrolled');
+      $('#brand-logo').removeClass('large-logo');
+    }
+    else{
+      $('.navbar').addClass('not-scrolled');
+      $('#brand-logo').addClass('large-logo');
+    } 
+    
+    $(window).scroll(function(){
+      if($(this).scrollTop() > 50){
+        $('.navbar').removeClass('not-scrolled');
+        $('#brand-logo').removeClass('large-logo');
+      }
+      else{
+        $('.navbar').addClass('not-scrolled');
+        $('#brand-logo').addClass('large-logo');
+      }
+    });
+
+    // QUOTE SYSTEM
+
+    // <blockquote class="blockquote text-center border-0 w-50">
+    //   <p class="mb-0 text-white" id="quote-content"></p>
+    //   <footer class="blockquote-footer text-white" id="quote-title"></footer>
+    // </blockquote>
+
+    // $.ajax( {
+      
+    //   url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+    //   success: function(data) {
+    //     var post = data.shift(); // The data is an array of posts. Grab the first one.
+    //     $('#quote-title').text(post.title);
+    //     $('#quote-content').html(post.content);
+    //   },
+    //   cache: false
+    // });
+
+  }
+
+</script>
+
+<!-- Lists all Blog Posts For Future Reference --><footer>
   <data class="u-url" href="/"></data>
   <div class="container">
     <div class="row">
@@ -79,36 +175,17 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><script type="text/javascript">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
-  $(document).ready(function () {
-    
-    $(window).scroll(function(){
-      if($(this).scrollTop() > 50){
-        $('.navbar').removeClass('not-scrolled');
-        $('#brand-logo').removeClass('large-logo');
-      }
-      else{
-        $('.navbar').addClass('not-scrolled');
-        $('#brand-logo').addClass('large-logo');
-      }
-    });
-
-
-    $.ajax( {
-      
-      url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
-      success: function(data) {
-        var post = data.shift(); // The data is an array of posts. Grab the first one.
-        $('#quote-title').text(post.title);
-        $('#quote-content').html(post.content);
-      },
-      cache: false
-    });
-
-  });
   
-  </script></footer>
+  <script type="text/javascript">
+  
+  $(document).ready(function () {home_callback();});
+  
+  </script>
+  
+
+</footer>
 </body>
 
 </html>

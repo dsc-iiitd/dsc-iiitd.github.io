@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+.btn.active.focus, .btn.active:focus,
+.btn.focus, .btn:active.focus, 
+.btn:active:focus, .btn:focus {
+      outline: none !important;
+      box-shadow: none !important;
+}
+a:visited.btn-outline-light {
+    color: white;
+}
+a:hover.btn-outline-light {
+    color: black;
+}
+html {
+    scroll-behavior:smooth
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 .navbar {
     transition: 200ms ease;
 }
@@ -11,12 +30,27 @@
 .large-logo {
     height: 40px;
 }
+.shadow-sm {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.shadow {
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
 .bg-cover {
     background: url(/assets/img/cover-bg.jpg);
     height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 .cover-overlay {
     position: absolute;
@@ -24,7 +58,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.offset-negative {
+    margin-top: -56px;
+}
+.offset-positive {
+    margin-top: 56px;
 }
 .social-media-links{
 	margin: 0;	
@@ -46,14 +86,4 @@
 }
 .social-username-text {
 	display: none;
-}
-.shadow-sm {
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-.shadow {
-    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
 }

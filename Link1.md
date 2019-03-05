@@ -1,5 +1,5 @@
 ---
 layout: default
-title: Link1
-permalink: /#link1
+title: About us
+permalink: /#about
 ---

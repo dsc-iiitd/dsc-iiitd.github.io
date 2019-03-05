@@ -1,5 +1,5 @@
 ---
 layout: default
-title: Link2
-permalink: /#link2
+title: News
+permalink: /#news
 ---
