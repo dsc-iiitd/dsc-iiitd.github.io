@@ -4,12 +4,15 @@ layout: default
 
 <div class="bg-cover">
   <div class="cover-overlay d-flex justify-content-center align-items-center">
-    <div class="text-center">
-      <p class="text-white display-4 mb-5">Lorem ipsum dolor sit amet, consectetur.</p>
-      <a class="btn btn-outline-light mx-3" href="#" role="button" style="min-width: 150px">Events</a>
-      <a class="btn btn-outline-light mx-3" href="#" role="button" style="min-width: 150px">Contact Us</a>
+    <div class="text-left">
+      <p class="text-white h1 mb-1 text-left pl-3 pr-1">We don't speak gibberish!</p>
+      <p class=" text-left small text-white font-italic mb-5 ml-1 pl-3">Ps. sellup</p>
+      <div class="w-100 text-center">
+        <a class="btn btn-outline-light mx-2" href="#news" role="button" style="min-width: 150px">Events</a>
+        <a class="btn btn-outline-light mx-2" href="https://github.com/dsc-iiitd" role="button" style="min-width: 150px">Github</a>
+      </div>
     </div>
-      <a href="#about" style="position: absolute; bottom: 50px" class="bounceInDown animated delay-1s"><img src="/assets/img/angle-arrow.png" class="pulse animated fast infinite"></a>
+      <a href="#about" style="position: absolute; bottom: 50px" class="bounceInDown animated delay-1s"><img src="/assets/img/angle-arrow.svg" class="pulse animated fast infinite"></a>
   </div>
 </div>
 
@@ -22,25 +25,25 @@ layout: default
   <div class="row">
     <div class="col-12 col-lg-4">
       <div class="card  border-0">
-        <img class="card-img-top rounded" src="/assets/img/placeholder.svg" alt="">
+        <img class="card-img-top rounded" src="/assets/img/design.jpg" alt="">
         <div class="card-body px-0 pt-3 pb-5">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Apply innovative thinking to design solutions to common problems faced by the community around you, crowdsourced by DSC.</p>
         </div>
       </div>
     </div>
     <div class="col-12 col-lg-4">
       <div class="card  border-0">
-        <img class="card-img-top rounded" src="/assets/img/placeholder.svg" alt="">
+        <img class="card-img-top rounded" src="/assets/img/develop.jpg" alt="">
         <div class="card-body px-0 pt-3 pb-5">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Give life to your innovative solutions by making practical use of learned theoretical knowledge, gaining necessary experience.</p>
         </div>
       </div>
     </div>
     <div class="col-12 col-lg-4">
       <div class="card  border-0">
-        <img class="card-img-top rounded" src="/assets/img/placeholder.svg" alt="">
+        <img class="card-img-top rounded" src="/assets/img/connect.jpg" alt="">
         <div class="card-body px-0 pt-3 pb-5">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Be a part of a wide community of like-minded developers, where you can seek help and get a review, and provide your own expertise too.</p>
         </div>
       </div>
     </div>
@@ -60,19 +63,19 @@ layout: default
       <h1 class="display-2 text-info-custom mb-0">{{ site.stat2 }}</h1>
       <p class="lead text-white mb-3">projects</p>
       <p class="text-info-custom font-weight-bold">_______</p>
-      <p class="text-white mb-0 font-italic small">and counting...</p>
+      <p class="text-white mb-0 font-italic small">under work</p>
     </div>
     <div class="col-6 col-lg-2 text-center my-5">
       <h1 class="display-2 text-info-custom mb-0">{{ site.stat3 }}</h1>
       <p class="lead text-white mb-3">events</p>
       <p class="text-info-custom font-weight-bold">_______</p>
-      <p class="text-white mb-0 font-italic small">and counting...</p>
+      <p class="text-white mb-0 font-italic small">yet...</p>
     </div>
     <div class="col-6 col-lg-2 text-center my-5">
       <h1 class="display-2 text-info-custom mb-0">{{ site.stat4 }}</h1>
       <p class="lead text-white mb-3">hackathons</p>
       <p class="text-info-custom font-weight-bold">_______</p>
-      <p class="text-white mb-0 font-italic small">and counting...</p>
+      <p class="text-white mb-0 font-italic small">so far</p>
     </div>
   </div>
 </section>
@@ -84,7 +87,9 @@ layout: default
     </div>
   </div>    
 
-  {% if site.categories.Upcoming.size < 0 %}
+  {% assign post_count = site.categories.Upcoming | size %}
+
+  {% if post_count <= 0 %}
 
   <div class="row mb-5">
     <div class="col-12">
@@ -130,13 +135,33 @@ layout: default
       <h1 class="text-center my-5"> Members </h1>
     </div>
   </div>
-  <div class="row">
-    {% for post in site.categories.Member %}
+  {% for post in site.categories.Lead %}
+  <div class="row justify-content-center">
     <div class="col-6 col-lg-3">
       <div class="card border-0 align-items-center">
         <img class="card-img-top rounded-circle member-image" src="{{ site.baseurl }}/assets/img/members/{{post.img}}" alt="{{ post.title }}">
         <div class="card-body px-0 pt-3 pb-5">
-          <p class="card-text text-center">{{ post.title }}</p>
+          <p class="card-text text-center mb-0">{{ post.title }}</p>
+          <p class="card-text text-center small text-info mb-2">{{ post.sub_title }}</p>
+          <ul class="social-media-links text-center">
+            {%- if post.github_username -%}<li class="social-list-item"><a href="https://github.com/{{ post.github_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.github_username| escape }}</span></a></li>{%- endif -%}{%- if post.linkedin_username -%}<li class="social-list-item"><a href="https://www.linkedin.com/in/{{ post.linkedin_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.linkedin_username| escape }}</span></a></li>{%- endif -%}{%- if post.facebook_username -%}<li class="social-list-item"><a href="https://www.facebook.com/{{ post.facebook_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#facebook' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.facebook_username| escape }}</span></a></li>{%- endif -%}{%- if post.instagram_username -%}<li class="social-list-item"><a href="https://instagram.com/{{ post.instagram_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#instagram' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.instagram_username| escape }}</span></a></li>{%- endif -%}{%- if post.twitter_username -%}<li class="social-list-item"><a href="https://www.twitter.com/{{ post.twitter_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.twitter_username| escape }}</span></a></li>{%- endif -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="row justify-content-center">
+    {% for post in site.categories.Member reversed %}
+    <div class="col-6 col-lg-3">
+      <div class="card border-0 align-items-center">
+        <img class="card-img-top rounded-circle member-image" src="{{ site.baseurl }}/assets/img/members/{{post.img}}" alt="{{ post.title }}">
+        <div class="card-body px-0 pt-3 pb-5">
+          <p class="card-text text-center mb-0">{{ post.title }}</p>
+          <p class="card-text text-center small text-info mb-2">{{ post.sub_title }}</p>
+          <ul class="social-media-links text-center">
+            {%- if post.github_username -%}<li class="social-list-item"><a href="https://github.com/{{ post.github_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.github_username| escape }}</span></a></li>{%- endif -%}{%- if post.linkedin_username -%}<li class="social-list-item"><a href="https://www.linkedin.com/in/{{ post.linkedin_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.linkedin_username| escape }}</span></a></li>{%- endif -%}{%- if post.facebook_username -%}<li class="social-list-item"><a href="https://www.facebook.com/{{ post.facebook_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#facebook' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.facebook_username| escape }}</span></a></li>{%- endif -%}{%- if post.instagram_username -%}<li class="social-list-item"><a href="https://instagram.com/{{ post.instagram_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#instagram' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.instagram_username| escape }}</span></a></li>{%- endif -%}{%- if post.twitter_username -%}<li class="social-list-item"><a href="https://www.twitter.com/{{ post.twitter_username| cgi_escape | escape }}"><svg class="social-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg> <span class="social-username-text">{{ post.twitter_username| escape }}</span></a></li>{%- endif -%}
+          </ul>
         </div>
       </div>
     </div>

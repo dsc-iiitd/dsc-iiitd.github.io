@@ -10,11 +10,13 @@ permalink: /past_events
     </div>
   </div>    
 
-  {% if site.categories.Past.size < 0 %}
+  {% assign post_count = site.categories.Past | size %}
+
+  {% if post_count <= 0 %}
 
   <div class="row mb-5">
     <div class="col-12">
-      <p class="text-center">Oops Something Went Wrong!</p>
+      <p class="rss-subscribe text-center small mb-0" style="margin-top: -20px">None so far. Go to <a href="{{ "/" | relative_url }}">home</a></p>
     </div>
   </div>
 
