@@ -16,7 +16,7 @@ permalink: /past_events
 
   <div class="row mb-5">
     <div class="col-12">
-      <p class="rss-subscribe text-center small mb-0" style="margin-top: -20px">None so far. Go to <a href="{{ "/" | relative_url }}">home</a></p>
+      <p class="rss-subscribe text-center small mb-0" style="margin-top: -20px">None so far. Go to <a href="/">home</a></p>
     </div>
   </div>
 
@@ -27,7 +27,7 @@ permalink: /past_events
     <div class="col-12">
       <div class="row">
         <div class="col-12 col-md-4">
-          <img class="rounded w-100" src="{{ site.baseurl }}/assets/img/events/{{post.img}}" alt="{{post.title}} Image">
+          <img class="rounded w-100" src="/assets/img/events/{{post.img}}" alt="{{post.title}} Image">
         </div>
         <div class="col-12 col-md-8">
           <h3 class="mt-4">{{post.title}}</h3>
@@ -39,14 +39,14 @@ permalink: /past_events
             <span class="badge badge-pill badge-info" style="min-width: 70px">{{tag}}</span>
           {% endfor %}
           <p class="card-text mt-4 mb-1">{{ post.content | markdownify | strip_html | truncatewords: 30 }}</p>
-          <a class="card-link small" href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+          <a class="card-link small" href="{{ post.url | relative_url }}">Read More</a>
         </div>
       </div>
     </div>
   </div>
   {% endfor %}
 
-  <p class="rss-subscribe text-center small mb-0" style="margin-top: -20px">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>  
+  <p class="rss-subscribe text-center small mb-0" style="margin-top: -20px">Subscribe <a href="/feed.xml">via RSS</a></p>  
 
   {% endif %}
 
