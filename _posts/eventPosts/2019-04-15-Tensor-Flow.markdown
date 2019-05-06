@@ -25,4 +25,9 @@ At the end of the session, we opened a Kaggle contest for the students to partic
 
 With this session, we want to make our path towards Deep Learning, motivate it in a manner that makes the community realise the importance of Deep Learning techniques and why they are necessary. Additionally, our end goal is to bring them to a point where they can explore Deep Learning on their own with Tensorflow!
 
+Speakers:
+
+* [Aditya Chetan](mailto:aditya16217@iiitd.ac.in)
+* [Shubham Thakral](mailto:shubham17193@iiitd.ac.in)
+* [Divyam Anshumaan](mailto:divyam17147@iiitd.ac.in)
 <br>
