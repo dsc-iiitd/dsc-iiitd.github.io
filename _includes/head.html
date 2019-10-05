@@ -5,7 +5,9 @@
   <link rel="icon" href='/assets/favicon.ico'>
   <meta name="author" content="Avi Garg | avisionx">
   {%- seo -%}
-  <link rel="stylesheet" href='/assets/main.css'>
+  {%- if page.layout != "gcp" -%}
+    <link rel="stylesheet" href='/assets/main.css'>
+  {%- endif -%}
   {%- feed_meta -%}
   {%- if site.google_analytics -%}
     {%- include google-analytics.html -%}
