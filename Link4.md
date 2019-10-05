@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Past Events
-permalink: /past_events
+permalink: /past_events.html
 ---
 <section class="container custom-height">
   <div class="row offset-positive">
