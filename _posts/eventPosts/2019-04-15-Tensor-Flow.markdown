@@ -2,7 +2,7 @@
 layout:  post
 title:  "Tensorflow Workshop"
 date:	2019-04-15 17:30
-categories: [Past,]
+categories: [Past]
 tags: [tensor flow, ML, sklearn]
 img: 2019-04-15-tensor-flow.jpg
 excerpt_separator: <!--more-->
