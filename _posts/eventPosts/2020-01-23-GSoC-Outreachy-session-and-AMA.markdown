@@ -1,10 +1,10 @@
 ---
 layout:  post
-title:  "GSoC/Outreachy session and AMA"
-date:	2019-01-23 17:30
+title:  "GSoC Outreachy session and AMA"
+date:	2020-01-23 17:30
 categories: [Past]
 tags: [DSC, Byld, OpenSource]
-img: flutterEve.JPG
+img: outreachy.JPG
 excerpt_separator: <!--more-->
 ---
 <br>
