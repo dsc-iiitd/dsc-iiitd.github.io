@@ -4,7 +4,7 @@ title:  "GSoC Outreachy session and AMA"
 date:	2020-01-23 17:30
 categories: [Past]
 tags: [DSC, Byld, OpenSource]
-img: outreachy.JPG
+img: outreachy.jpg
 excerpt_separator: <!--more-->
 ---
 <br>

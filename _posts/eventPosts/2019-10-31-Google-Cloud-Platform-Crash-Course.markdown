@@ -4,7 +4,7 @@ title:  "Google Cloud Platform Crash Course"
 date:	2019-10-31 21:00
 categories: [Past]
 tags: [DSC, GCPCrashCourse, Swags]
-img: gcp.JPG
+img: gcp.jpg
 excerpt_separator: <!--more-->
 ---
 <br>
