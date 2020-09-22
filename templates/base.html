@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152720382-4"></script>
+        <script>
+            window.dataLayer= window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-152720382-4');
+        </script>
+        <title>{{pageTitle}}</title>
+        <meta name="title" property="title" content="{{pageTitle}}" />
+        <meta name="og:title" property="og:title" content="{{pageTitle}}" />
+        <meta name="twitter:title" property="twitter:title" content="{{pageTitle}}" />
+        <meta name="description" property="description" content="{{pageDescr}}" />
+        <meta name="og:description" property="og:description" content="{{pageDescr}}" />
+        <meta name="twitter:description" property="twitter:description" content="{{pageDescr}}" />
+        <meta name="og:url" property="og:url" content="https://dsc-iiitd.now.sh/{{slug}}" />
+        <meta name="twitter:url" property="twitter:url" content="https://dsc-iiitd.now.sh/{{slug}}" />
+        {% block meta %}
+        {% endblock %}
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DSC-IIIT Delhi" />
+        <link rel="icon" href="https://dsc-iiitd.now.sh{{url_for('static', filename='images/logo.png')}}" sizes="200x200" />
+        <link rel="apple-touch-icon-precomposed" href="https://dsc-iiitd.now.sh{{url_for('static', filename='images/logo.png')}}" sizes="200x200" />
+        <script type="application/ld+json">
+            {
+              "@id": "https://dsc-iiitd.now.sh",
+              "@context" : "http://schema.org",
+              "@type" : "Website",
+              "name" : "DSC-IIIT Delhi",
+              "description": "Developer Student Clubs are university based community groups for students interested in Google developer technologies. . By joining a DSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their community.",
+              "url" : "https://dsc-iiitd.now.sh",
+              "logo": "https://dsc-iiitd.now.sh/static/images/logo.png",
+              "sameAs" : ["https://github.com/dsc-iiitd"]
+            }
+        </script>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://maps.gstatic.com/" crossorigin>
+        <link rel="preconnect" href="https://khms0.googleapis.com" crossorigin>
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="dns-prefetch" href="https://maps.gstatic.com/">
+        <link rel="dns-prefetch" href="https://khms0.googleapis.com">
+        <link rel="dns-prefetch" href="https://maps.googleapis.com">
+        {% include "styles.html" %}
+    </head>
+    <body>
+        {% include "navbar.html" %}
+        {% block content %}
+        {% endblock %}
+        {% include "footer.html" %}
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                setTimeout(()=>{
+                    $('.lazy').each((item) => {
+                        $($('.lazy')[item]).attr('src', $($('.lazy')[item]).attr('data-src'));
+                    });
+                    $('.bgImage').each((item) => {
+                        $($('.bgImage')[item]).css({'background-position': 'center center', 'background-image': 'url(' + $($('.bgImage')[item]).attr('data-src') + ')', 'background-size': 'cover'});
+                    });
+                }, 100);
+            });
+        </script>
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>

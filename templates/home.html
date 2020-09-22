@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block meta %}
+<meta name="og:image" property="og:image" content="https://dsc-iiitd.now.sh{{url_for('static', filename='images/logo.png')}}" />
+<meta name="twitter:image" content="https://dsc-iiitd.now.sh{{url_for('static', filename='images/logo.png')}}" />
+<meta name="twitter:card" content="summary">
+{% endblock %}
+{% block content %}
+  <div class="bg-primary text-white container-fluid py-5">
+      <div class="container">
+          <div class="row">
+              <div class="d-flex align-items-center justify-content-start col-12">
+                <h1>
+                  At DSC IIIT-Delhi, our aim is to learn and teach.<br />
+                  Developers, designers and managers come together under one roof to create a community which inspires thousands.<br />
+                </h1>
+              </div>
+          </div>
+      </div>
+  </div>
+  {% include "about.html" %}
+  <div id="events" class="container-fluid pt-5 bg-primary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="pb-5 col-12 text-center">
+          <h2 class="h1 text-center">Events</h2>
+        </div>
+      </div>
+      {% with %}
+        {% set articles=events %}
+        {% include "macro.html" %}
+      {% endwith %}
+    </div>
+  </div>
+  <div id="members" class="container-fluid pt-5 text-primary">
+    <div class="container">
+      <div class="row">
+        <div class="pb-5 col-12 text-center">
+          <h2 class="h1 text-center">Members</h2>
+        </div>
+      </div>
+      {% with %}
+        {% set articles=members %}
+        {% set textClass='text-info' %}
+        {% include "macromembers.html" %}
+      {% endwith %}
+    </div>
+  </div>
+  <div id="mentors" class="container-fluid pt-5 bg-primary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="pb-5 col-12 text-center">
+          <h2 class="h1 text-center">Mentors</h2>
+        </div>
+      </div>
+      {% with %}
+        {% set articles=mentors %}
+        {% set textClass='text-white' %}
+        {% include "macromembers.html" %}
+      {% endwith %}
+    </div>
+  </div>
+  {% include "social.html" %}
+{% endblock %}
+{% block scripts %}
+<script>
+</script>
+{% endblock %}

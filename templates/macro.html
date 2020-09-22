@@ -1,0 +1,26 @@
+{% macro build_list(articles) %}
+    {% for art in articles %}
+        <div class="pb-5 d-flex align-items-stretch flex-column flex-md-row">
+            <div class="col-md h-100">
+                <img data-src="{{url_for('static', filename='images/'+articles.get(art)['image'])}}" class="lazy w-100" />
+            </div>
+            <div class="col-md d-flex flex-column">
+                <h5 class="mt-3 mt-md-0 text-white">
+                    {{articles.get(art)['timestamp']}}
+                </h5>
+                <h3 class="text-white">
+                    {{art}}
+                </h3>
+                <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;">
+                    {{articles.get(art)['desc']}}
+                </p>
+                <a href="/events/{{art}}/" class="mt-3 mt-md-auto">
+                    <button class="btn bg-white">
+                        View Event
+                    </button>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+{% endmacro %}
+{{build_list(articles)}}
